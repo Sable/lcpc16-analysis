@@ -24,6 +24,8 @@ total time: 7.663s
 Original two loops:
 %%% LJH these loops are perfect for traditional loop optimizers. The array f is only being read, so no need for copies,  the result is being written to a scalar, which can be kept in a register.  The indexing into the arrays is very regular and can be handled well with standard techniques like induction variable elimination.
 
+%LJH - note that the array f is only being read,  no copies are ever needed, and that q is a scalar, that presumably can be put into a register.      These loops are exactly the kind of loops that a standard optimizer could do a good job on.     In this code there is no need to generate any new vectors or arrays. 
+
 
 
 
@@ -45,13 +47,19 @@ Original two loops:
 
 Vectorized code: (plus)
 %%% On the other hand,  the vectorized version requires a lot of new copies of intermediate vectors.  As below,  there are around 5 copies of size n and 5 copies of size m required.   This means that the memory is being traversed many times,  instead of only once in the original loops.    This may be beneficial in an interpreter, where there is a lot of overhead for every instruction anyway,   but it will not be good when compared to a JIT that can generate tight code for the loops.
+% in this code we must create lots of new vectors,  I have estimated below how many.   It looks to me to be around 5 vectors of size n and 5 vectors of size m.     Each of these vectors needs to be created and will not be in registers. 
 
 --------------------------
+
       q = 0;
-      ii = colon(1,n); %%% LJH 1 copy
-      q = plus(q,sum(times(plus(f(ii, m),f(plus(ii,1),m)),0.5)));  %%% 4 or 5 copies
-      jj = colon(1,m); %%% 1 copy
-      cap = times(plus(q,sum(times(plus(f(n, jj),f(n,plus(jj,1))),0.5))),4);  %%% 4 or 5 copies
+      %   vector copy
+      ii = colon(1,n);
+      %   4 or 5 vector copies
+      q = plus(q,sum(times(plus(f(ii, m),f(plus(ii,1),m)),0.5)));
+      %  vector copy
+      jj = colon(1,m);
+      % 4 or 5 vector copies
+      cap = times(plus(q,sum(times(plus(f(n, jj),f(n,plus(jj,1))),0.5))),4);
       % Four quadrants.;
       cap = times(cap,8.854187);
 ---------------------------
@@ -65,6 +73,8 @@ Versions
   (vectorized code)
 3. Matlab-plus:
   (two loops are replaced with with original code) %%% LJH since this is actually a bit faster than the original, this means that it really is the vectorized statements that are slowing things down.
+% LJH this shows that the slowdown is
+   not due to the conversion to Tamer plus,  it is due to the replacement of the loops with vectors. 
 4. Matlab-plus:
   (ii and jj are replaced with colons)
 
