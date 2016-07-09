@@ -20,4 +20,59 @@ automatically using the Mc2Mc tool (https://github.com/Sable/Mc2Mc). Each
 benchmark has its own README that explains the results we obtained for the
 different versions and the interpretation we made of the different results.
 
+Analysis of the performance on the different versions of Matlab
+===============================
 
+Code versions:
+
+    - matlab         : original MATLAB code
+    - matlab-plus    : vectorized MATLAB code with checks
+    - matlab-plus-no : vectorized MATLAB code with no checks
+
+Compilers:
+
+    - MATLAB R2013a
+    - MATLAB R2015b
+
+Benchmarks:
+
+    10 benchmarks (including spmv)
+
+Testing
+
+    - MATLAB R2013a with JIT on  -> figure_Linux-with-JIT.pdf
+    - MATLAB R2013a with JIT off -> figure_Linux-without-JIT.pdf
+    - MATLAB R2015b with JIT on  -> figure_Linux-MATLAB-2015.pdf
+
+Findings
+
+    1. When the JIT is turned off, 9 of 10 benchmarks have speedup.
+       Especially, the blackscholes and Monte Carlo simuations.
+    2. When the JIT is turned on, the speedup of R2013a and R2015b
+       is obvious, but the R2015b has fewer speedup due the improvement
+       of the JIT.  The same reason applies to the MC and pagerank.
+    3. Why is the performance of lgdr improved in R2015b?
+       After I carefully checked the code and I found none loops can
+be vectorized.
+       I think we should remove this benchmark from the list. It seems
+the JIT fails
+       in R2015b.  Anyway, it is irrelevant to our topics.
+
+
+R2015 release note
+
+    MATLAB Execution Engine: Run programs faster with redesigned
+architecture (Performance section)
+    Link: http://www.mathworks.com/help/matlab/release-notes.html
+
+    "The new MATLAB execution engine includes performance improvements
+to function calls, object-oriented operations, and many other MATLAB
+operations. These performance improvements result in significantly
+faster execution of many MATLAB programs with an average speed-up of
+40% among 76 performance-sensitive applications from users. Of these
+tested applications, 13 ran at least twice as fast and only 1 slowed
+down by more than 10%. The new execution engine uses just-in-time
+compilation of all MATLAB code which makes performance more uniform
+and predictable. The new engine offers improved quality and provides a
+platform for future performance optimizations and language
+enhancements."
