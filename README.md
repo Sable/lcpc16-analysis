@@ -100,7 +100,8 @@ worse.
 |matlab-plus    | octave      | 9.8707s   |
 
 
-Speedup summary:
+Speedup summary
+====
 
 In MATLAB: (baseline matlab)
 
