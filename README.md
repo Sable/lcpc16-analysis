@@ -124,11 +124,13 @@ Why is vectorization slowing down in some cases?
 After looking at the three cases that slow down,  I think we can see some possible explanations.  First read the three messages where I added some comments.
 
 Overall, I would expect vectorization to always be a good idea when we have something like
+
         for i = 1:n
            b(i) = f(a(i))
         end
 
 vectorized to
+
         b = f(a)
 
 In both cases we have to create a new vector b.    The only problem might be if a copy of a needs to be made to call the library function f.    I would hope that this is not the case.
