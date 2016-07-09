@@ -105,13 +105,13 @@ Speedup summary
 
 In MATLAB: (baseline matlab)
 
-| matlab | vector  | plus   |
-| ----   | ----    | ----   |
-| 1.0000 | 1.0631x | 1.0754x |
+| matlab  | vector  | plus   |
+| ----    | ----    | ----   |
+| 1.0000x | 1.0631x | 1.0754x |
 
 
 In Octave (baseline matlab)
 
-| matlab | vector   | plus     |
-| ----   | ----     | ----     |
-| 1.0000 | 65.4298x | 73.7727x |
+| matlab  | vector   | plus     |
+| ----    | ----     | ----     |
+| 1.0000x | 65.4298x | 73.7727x |
