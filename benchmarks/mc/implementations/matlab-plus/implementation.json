@@ -1,0 +1,15 @@
+{
+    "type": "implementation",
+    "short-name":"matlab-plus",
+    "description":"Matlab code",
+    "language":"matlab",
+    "core-source-files":[
+       { "file": "./MonteCarlo.m"}
+    ],  
+    "runner-source-file": { "file": "./runner.m" },
+    "runner-arguments": [
+        { "expand": "/experiment/input-size" }
+    ],  
+    "libraries":[
+    ]
+}

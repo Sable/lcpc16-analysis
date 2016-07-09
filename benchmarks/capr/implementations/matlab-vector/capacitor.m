@@ -1,39 +1,39 @@
 function [cap] = capacitor(a, b, c, d, n, tol, rel)
 %-----------------------------------------------------------------------
 %
-%   This function M-file computes the capacitance
-%   per unit length of a coaxial pair of rectangles.
+%	This function M-file computes the capacitance
+%	per unit length of a coaxial pair of rectangles.
 %
-%   Invocation:
-%       >> cap=capacitor(a, b, c, d, n, tol, rel)
+%	Invocation:
+%		>> cap=capacitor(a, b, c, d, n, tol, rel)
 %
-%       where
+%		where
 %
-%       i. a is the width of the inner conductor,
+%		i. a is the width of the inner conductor,
 %
-%       i. b is the height of the inner conductor,
+%		i. b is the height of the inner conductor,
 %
-%       i. c is the width of the outer conductor,
+%		i. c is the width of the outer conductor,
 %
-%       i. d is the height of the outer conductor,
+%		i. d is the height of the outer conductor,
 %
-%       i. n is the number of points along the x-axis,
+%		i. n is the number of points along the x-axis,
 %
-%       i. tol is the tolerance,
+%		i. tol is the tolerance,
 %
-%       i. rel is the relaxation parameter,
+%		i. rel is the relaxation parameter,
 %
-%       o. cap is the capacitance per unit length.
+%		o. cap is the capacitance per unit length.
 %
-%   Requirements:
-%       None.
+%	Requirements:
+%		None.
 %
-%   Examples:
-%       >> cap=capacitor(1, 2, 2, 3, 50, 1e-9, 1.90)
+%	Examples:
+%		>> cap=capacitor(1, 2, 2, 3, 50, 1e-9, 1.90)
 %
-%   Source:
-%       Computational Electromagnetics - EEK 170 course at
-%       http://www.elmagn.chalmers.se/courses/CEM/.
+%	Source:
+%		Computational Electromagnetics - EEK 170 course at
+%		http://www.elmagn.chalmers.se/courses/CEM/.
 %
 %-----------------------------------------------------------------------
   mc_t172 = 0.5;
@@ -75,14 +75,14 @@ function [cap] = capacitor(a, b, c, d, n, tol, rel)
   [mc_t168] = plus(na, mc_t180);
   mc_t185 = 1;
   [ii] = colon(mc_t185, mc_t168);
-  mc_t181 = 1;
-  mc_t184 = 1;
-  mc_t183 = 1;
   mc_t182 = 0;
+  mc_t183 = 1;
+  mc_t184 = 1;
+  mc_t181 = 1;
   [mc_t167] = plus(mb, mc_t181);
   [jj] = colon(mc_t184, mc_t167);
-  f(ii, jj) = mc_t183;
   mask(ii, jj) = mc_t182;
+  f(ii, jj) = mc_t183;
   oldcap = 0;
   mc_t187 = 1;
   mc_t188 = 1000;
@@ -104,41 +104,41 @@ end
 function [cap] = gauss(n, m, h, f)
 %-----------------------------------------------------------------------
 %
-%   This function M-file computes capacitance from the
-%   potential.
+%	This function M-file computes capacitance from the
+%	potential.
 %
-%   Invocation:
-%       >> cap=gauss(n, m, h, f)
+%	Invocation:
+%		>> cap=gauss(n, m, h, f)
 %
-%       where
+%		where
 %
-%       i. n is the number of points along the x-axis,
+%		i. n is the number of points along the x-axis,
 %
-%       i. m is the number of points along the height of
-%          the outer conductor,
+%		i. m is the number of points along the height of
+%		   the outer conductor,
 %
-%       i. f is the potential array,
+%		i. f is the potential array,
 %
-%       i. h is the grid size,
+%		i. h is the grid size,
 %
-%       o. cap is the capacitance.
+%		o. cap is the capacitance.
 %
-%   Requirements:
-%       None.
+%	Requirements:
+%		None.
 %
-%   Source:
-%       Computational Electromagnetics - EEK 170 course at
-%       http://www.elmagn.chalmers.se/courses/CEM/.
+%	Source:
+%		Computational Electromagnetics - EEK 170 course at
+%		http://www.elmagn.chalmers.se/courses/CEM/.
 %
 %-----------------------------------------------------------------------
   q = 0;
   mc_t205 = 1;
   [ii] = colon(mc_t205, n);
   [mc_t192] = f(ii, m);
-  mc_t204 = 0.5;
   mc_t203 = 1;
 %mc_t189 = q;
   mc_t195 = m;
+  mc_t204 = 0.5;
   [mc_t194] = plus(ii, mc_t203);
   [mc_t193] = f(mc_t194, mc_t195);
   [mc_t191] = plus(mc_t192, mc_t193);
@@ -148,11 +148,11 @@ function [cap] = gauss(n, m, h, f)
   [q] = plus(q, mc_sum0);
   mc_t208 = 1;
   [jj] = colon(mc_t208, m);
-%mc_t196 = q;
-  mc_t201 = n;
-  [mc_t199] = f(n, jj);
   mc_t206 = 1;
+%mc_t196 = q;
   mc_t207 = 0.5;
+  [mc_t199] = f(n, jj);
+  mc_t201 = n;
   [mc_t202] = plus(jj, mc_t206);
   [mc_t200] = f(mc_t201, mc_t202);
   [mc_t198] = plus(mc_t199, mc_t200);
@@ -169,36 +169,36 @@ end
 function [f] = seidel(f, mask, n, m, na, mb)
 %-----------------------------------------------------------------------
 %
-%   This function M-file makes one Seidel iteration.
+%	This function M-file makes one Seidel iteration.
 %
-%   Invocation:
-%       >> g=seidel(f, mask, n, m, na, mb)
+%	Invocation:
+%		>> g=seidel(f, mask, n, m, na, mb)
 %
-%       where
+%		where
 %
-%       i. f is the potential array,
+%		i. f is the potential array,
 %
-%       i. mask is the mask array,
+%		i. mask is the mask array,
 %
-%       i. n is the number of points along the x-axis,
+%		i. n is the number of points along the x-axis,
 %
-%       i. m is the number of points along the height of
-%          the outer conductor,
+%		i. m is the number of points along the height of
+%		   the outer conductor,
 %
-%       i. na is the number of points along the width of
-%          the inner conductor,
+%		i. na is the number of points along the width of
+%		   the inner conductor,
 %
-%       i. mb is the number of points along the height of
-%          the inner conductor,
+%		i. mb is the number of points along the height of
+%		   the inner conductor,
 %
-%       o. g is the updated potential array.
+%		o. g is the updated potential array.
 %
-%   Requirements:
-%       None.
+%	Requirements:
+%		None.
 %
-%   Source:
-%       Computational Electromagnetics - EEK 170 course at
-%       http://www.elmagn.chalmers.se/courses/CEM/.
+%	Source:
+%		Computational Electromagnetics - EEK 170 course at
+%		http://www.elmagn.chalmers.se/courses/CEM/.
 %
 %-----------------------------------------------------------------------
   mc_t283 = 2;

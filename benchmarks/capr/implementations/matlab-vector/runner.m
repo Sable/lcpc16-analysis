@@ -13,7 +13,7 @@ tol=1.3e-13; % Tolerance.
 rel=0.90; % Relaxation parameter.
 
 tic();
-for time=1:scale*10
+for time=1:scale
   cap=capacitor(a, b, c, d, n, tol, rel);
 end
 elapsed = toc();

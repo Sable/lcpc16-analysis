@@ -109,7 +109,7 @@
     double rel=0.90;    // Relaxation parameter.
 
     clock_t time0 = clock();
-    for(int ii=0,i2=scale*10;ii<i2;ii++){
+    for(int ii=0,i2=scale;ii<i2;ii++){
       double cap=capacitor(a, b, c, d, n, tol, rel);
     }
     double elapsed = (clock() - time0)/1000000.0;

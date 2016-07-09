@@ -1,0 +1,14 @@
+{
+    "type": "benchmark",
+    "name":"Monte Carlo Simulation",
+    "short-name":"mc",
+    "description": "Monte Carlo Simulation",
+    "version":"0.1.0",
+    "input-size":{
+        "small": 10000000,
+        "medium": 15000000,
+        "large": 20000000
+    },
+    "random-seed":1337,
+    "dwarf": "none"
+}
