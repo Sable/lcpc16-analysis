@@ -104,11 +104,11 @@ Performance summary:
 
 In MATLAB: (baseline matlab)
 
-    | matlab | vector | plus   |
-    | 1.0000 | 1.0631 | 1.0754 |
+| matlab | vector | plus   |
+| 1.0000 | 1.0631 | 1.0754 |
 
 
 In Octave (baseline matlab)
 
-    | matlab | vector | plus    |
-    | 1.0000 | 65.4298| 73.7727 |
+| matlab | vector | plus    |
+| 1.0000 | 65.4298| 73.7727 |
