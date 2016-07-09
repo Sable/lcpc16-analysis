@@ -30,7 +30,7 @@ Vectorized code:
 
 %%%% LJH - I think this is again lots of overhead because of the colon.   What if instead we could use:
 
-rtnl(i,:) = resl
-rtnR(i,:) = resR
+      rtnl(i,:) = resl
+      rtnR(i,:) = resR
 
 is that slower than the loops? 
