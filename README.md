@@ -76,3 +76,39 @@ compilation of all MATLAB code which makes performance more uniform
 and predictable. The new engine offers improved quality and provides a
 platform for future performance optimizations and language
 enhancements."
+
+Analysis of the performance on Octave
+================
+
+
+The current Octave version is 4.0 which doesn't support the JIT.  The
+benchmark 'pagerank' is tested with the medium-size input.  To my
+surprise, the performance of Octave is much worse in loops compared
+with MATLAB.  With vectorization, Octave can achieve impressive
+speedup (65x~73x).  The reason that the 'pagerank' doesn't have much
+speedup is because of MATLAB's JITs.  With the competitive JITs, the
+advantage of the vectorization for loops is decreased sometimes even
+worse.
+
+|implementation | environment | mean      |
+|-------------- | ----------- | --------- |
+|matlab         | matlab-vm   | 1.6423s   |
+|matlab-vector  | matlab-vm   | 1.5448s   |
+|matlab-plus    | matlab-vm   | 1.5272s   |
+|matlab         | octave      | 728.1882s |
+|matlab-vector  | octave      | 11.1293s  |
+|matlab-plus    | octave      | 9.8707s   |
+
+
+Performance summary:
+
+In MATLAB: (baseline matlab)
+
+    | matlab | vector | plus   |
+    | 1.0000 | 1.0631 | 1.0754 |
+
+
+In Octave (baseline matlab)
+
+    | matlab | vector | plus    |
+    | 1.0000 | 65.4298| 73.7727 |
