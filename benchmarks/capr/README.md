@@ -27,34 +27,37 @@ Original two loops:
 
 
 
-==========================
-q=0;
-for ii=1:n,
-    q=q+(f(ii, m)+f(ii+1, m))*0.5;
-end;
+--------------------------
 
-for jj=1:m,
-    q=q+(f(n, jj)+f(n, jj+1))*0.5;
-end;
-
-cap=q*4; % Four quadrants.
-cap=cap*8.854187;
-==========================
+      q=0;
+      for ii=1:n,
+          q=q+(f(ii, m)+f(ii+1, m))*0.5;
+      end;
+      
+      for jj=1:m,
+          q=q+(f(n, jj)+f(n, jj+1))*0.5;
+      end;
+      
+      cap=q*4; % Four quadrants.
+      cap=cap*8.854187;
+   
+-----------------------------
 
 Vectorized code: (plus)
 %%% On the other hand,  the vectorized version requires a lot of new copies of intermediate vectors.  As below,  there are around 5 copies of size n and 5 copies of size m required.   This means that the memory is being traversed many times,  instead of only once in the original loops.    This may be beneficial in an interpreter, where there is a lot of overhead for every instruction anyway,   but it will not be good when compared to a JIT that can generate tight code for the loops.
 
-==========================
-q = 0;
-ii = colon(1,n); %%% LJH 1 copy
-q = plus(q,sum(times(plus(f(ii, m),f(plus(ii,1),m)),0.5)));  %%% 4 or 5 copies
-jj = colon(1,m); %%% 1 copy
-cap = times(plus(q,sum(times(plus(f(n, jj),f(n,plus(jj,1))),0.5))),4);  %%% 4 or 5 copies
-% Four quadrants.;
-cap = times(cap,8.854187);
-==========================
+--------------------------
+      q = 0;
+      ii = colon(1,n); %%% LJH 1 copy
+      q = plus(q,sum(times(plus(f(ii, m),f(plus(ii,1),m)),0.5)));  %%% 4 or 5 copies
+      jj = colon(1,m); %%% 1 copy
+      cap = times(plus(q,sum(times(plus(f(n, jj),f(n,plus(jj,1))),0.5))),4);  %%% 4 or 5 copies
+      % Four quadrants.;
+      cap = times(cap,8.854187);
+---------------------------
 
-Versions:
+Versions
+=======
 
 1. Matlab:
   (original code, baseline)
@@ -66,7 +69,8 @@ Versions:
   (ii and jj are replaced with colons)
 
 
-Comparison:
+Comparison
+==========
 
 1. 2.6026s -> 1x
 2. 2.9620s -> 0.88x
