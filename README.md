@@ -115,3 +115,24 @@ In Octave (baseline matlab)
 | matlab  | vector   | plus     |
 | ----    | ----     | ----     |
 | 1.0000x | 65.4298x | 73.7727x |
+
+
+Why is vectorization slowing down in some cases?
+=======
+
+
+After looking at the three cases that slow down,  I think we can see some possible explanations.  First read the three messages where I added some comments.
+
+Overall, I would expect vectorization to always be a good idea when we have something like
+        for i = 1:n
+           b(i) = f(a(i))
+        end
+
+vectorized to
+        b = f(a)
+
+In both cases we have to create a new vector b.    The only problem might be if a copy of a needs to be made to call the library function f.    I would hope that this is not the case.
+
+I would expect vectorization not to be a good idea when the original loop was only reading values from an array and writing to a scalar.       The capr example illustrates this.
+
+Whenever we use colon to refer to parts of an array,  it is important to optimize its use as much as possible.    The fft might be an example,  if the code I proposed is faster. 
