@@ -1,0 +1,10 @@
+{
+	"type": "experiment",
+    "short-name": "paper-matlab-vm",
+	"iteration-number": 5,
+	"input-size":"medium",
+	"configuration": {
+	    "implementations": ["matlab","matlab-plus","matlab-plus-no"],
+        "environment": ["matlab-vm"]
+	}
+}

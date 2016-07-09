@@ -1,0 +1,10 @@
+{
+	"type": "experiment",
+    "short-name": "paper-octave",
+	"iteration-number": 1,
+	"input-size":"medium",
+	"configuration": {
+	    "implementations": ["matlab","matlab-plus","matlab-plus-no"],
+        "environment": ["octave"]
+	}
+}
