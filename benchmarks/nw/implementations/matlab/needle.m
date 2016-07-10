@@ -6,9 +6,6 @@ for i = 2:max_cols
     end
 end
 
-disp(reference(3,1:10));
-disp(blosum62(input_seq_2(1:10), input_seq_1(3)));
-
 for i = 2:max_rows
     input_itemsets(i, 1) = -(i - 1) * penalty;
 end
