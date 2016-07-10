@@ -1,7 +1,6 @@
 function runner(n, iter, thresh, divisor)
 % Example: runner(3000,10,0.00000001,100000);
     % feature accel off;
-    libpath = '/Users/wukefe/Documents/GitHub/wu/Ostrich2/implementations/matlab/lib/';
     fprintf(2, 'Running page rank\n');
     % random_pages
     if divisor < 1
@@ -16,11 +15,9 @@ function runner(n, iter, thresh, divisor)
         pages = csvread(filepath);
         noutlinks = sum(pages,2);
     else 
-        addpath(libpath);
         fprintf(2, 'Creating random page matrix\n');
         [pages,noutlinks] = createRandomPageMatrices(n, divisor);
         fprintf(2, 'The matrix has been created successfully\n');
-        rmpath(libpath);
     end
     pageRanks = zeros(n,1);
 

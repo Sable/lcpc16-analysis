@@ -2,7 +2,6 @@ function runner(layer_size)
 % Example: runner(2850000);
 
 % feature accel off;
-addpath('/Users/wukefe/Documents/GitHub/wu/Ostrich2/implementations/matlab/lib');
 
 sum_of_hidden_weights = 0;
 expected_sum_of_hidden_weights = 10.855641469359398;
