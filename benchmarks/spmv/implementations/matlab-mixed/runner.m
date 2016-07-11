@@ -3,9 +3,6 @@ function runner(dim,density,normal_stdev,iterations)
 % random seed
 
 % feature accel off;
-%s = RandStream('mcg16807','Seed',10000);
-%RandStream.setGlobalStream(s);
-%rng(10000);
 rand('seed',10000); %octave
 
 % rand_csr
