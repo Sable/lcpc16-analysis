@@ -3,7 +3,7 @@ maxDiff   = 99;
 dFactor   = 0.85;
 maps = zeros(n,n);
 
-fprintf('pagerank: loop1 = %d, loop2 = %d, loop3(v) = %d\n',iter,n,n);
+%fprintf('pagerank: loop1 = %d, loop2 = %d, loop3(v) = %d\n',iter,n,n);
 
 for t = 1:iter
     if maxDiff < thresh

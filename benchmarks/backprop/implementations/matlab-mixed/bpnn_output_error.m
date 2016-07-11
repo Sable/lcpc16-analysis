@@ -1,6 +1,6 @@
 function [errsum,delta] = bpnn_output_error(delta,target,output,nj)
 errsum = 0.0;
-fprintf('bpnn_output_error: loop1 = %d\n', nj-1);
+%fprintf('bpnn_output_error: loop1 = %d\n', nj-1);
 % old
 %for j = 2:nj
 %    o = output(j);

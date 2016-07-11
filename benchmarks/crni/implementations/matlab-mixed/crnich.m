@@ -81,7 +81,7 @@ r=c^2*k/h^2;
 s1=2+2/r;
 s2=2/r-2;
 U=zeros(n, m);
-fprintf('crnich1: loop = %d\n',n-2);
+%fprintf('crnich1: loop = %d\n',n-2);
 % old
 %for i1=2:(n-1),
 %    % u(x, 0)=sin(pi*x)+sin(3*pi*x).
@@ -105,7 +105,7 @@ Vb(1)=0;
 Vb(n)=0;
 
 
-fprintf('crnich2: loop1 = %d, loop2(v) = %d\n',m-1,n-2);
+%fprintf('crnich2: loop1 = %d, loop2(v) = %d\n',m-1,n-2);
 for j1=2:m,
     % old
     %for i1=2:(n-1),

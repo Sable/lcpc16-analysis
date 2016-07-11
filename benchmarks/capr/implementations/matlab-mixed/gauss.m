@@ -29,8 +29,8 @@ function cap=gauss(n, m, h, f)
 %
 %-----------------------------------------------------------------------
 
-fprintf('gauss1: loop= %d\n', n);
-fprintf('gauss2: loop= %d\n', m);
+%fprintf('gauss1: loop= %d\n', n);
+%fprintf('gauss2: loop= %d\n', m);
 q=0;
 % old
 %for ii=1:n,

@@ -49,7 +49,7 @@ y=linspace(0, 0.5*d, m+1);
 f=zeros(n+1, m+1);
 mask=ones(n+1, m+1)*rel;
 
-fprintf('capacitor: loop1(v)= %d, loop2(v)= %d\n',na+1,mb+1);
+%fprintf('capacitor: loop1(v)= %d, loop2(v)= %d\n',na+1,mb+1);
 % old
 %for ii=1:na+1,
 %    for jj=1:mb+1,

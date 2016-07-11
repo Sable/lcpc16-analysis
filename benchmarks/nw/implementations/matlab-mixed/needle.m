@@ -1,8 +1,8 @@
 function [answer,reference] = needle(penalty, max_rows, max_cols, input_seq_1, input_seq_2, reference, input_itemsets, blosum62)
 
-fprintf('needle1: loop1 = %d, loop2(v) = %d\n', max_cols-1,max_rows-1);
-fprintf('needle2: loop1(v) = %d\n', max_cols-1);
-fprintf('needle3: loop1(v) = %d\n', max_rows-1);
+%fprintf('needle1: loop1 = %d, loop2(v) = %d\n', max_cols-1,max_rows-1);
+%fprintf('needle2: loop1(v) = %d\n', max_cols-1);
+%fprintf('needle3: loop1(v) = %d\n', max_rows-1);
 for i = 2:max_cols
     % old
     %for j = 2:max_rows

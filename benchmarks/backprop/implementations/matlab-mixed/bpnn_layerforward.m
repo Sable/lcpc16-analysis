@@ -1,6 +1,6 @@
 function [l1,l2] = bpnn_layerforward(l1,l2,conn,n1,n2)
 l1(1) = 1.0;
-fprintf('bpnn_layerforward: loop1 = %d, loop2 (v) = %d\n', n2-1,n1);
+%fprintf('bpnn_layerforward: loop1 = %d, loop2 (v) = %d\n', n2-1,n1);
 for j = 2:n2
     s = 0;
     %for k = 1:n1

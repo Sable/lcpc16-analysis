@@ -1,6 +1,6 @@
 function [errsum,delta_h] = bpnn_hidden_error(delta_h,nh,delta_o,no,who,hidden)
 errsum = 0.0;
-fprintf('bpnn_hidden_error: loop1 = %d, loop2 (v) = %d\n', nh-1,no-1);
+%fprintf('bpnn_hidden_error: loop1 = %d, loop2 (v) = %d\n', nh-1,no-1);
 for j=2:nh
     h = hidden(j);
     s = 0.0;

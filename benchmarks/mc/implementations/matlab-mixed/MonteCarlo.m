@@ -1,8 +1,8 @@
 function [piValue] = MonteCarlo(inputData)
 n = size(inputData, 2);
 sampleOut = zeros(1,n);
-fprintf('MC1: loop(v) = %d\n',n);
-fprintf('MC2: loop(v) = %d\n',n);
+%fprintf('MC1: loop(v) = %d\n',n);
+%fprintf('MC2: loop(v) = %d\n',n);
 % old
 %for k=1:n
 %    sampleOut(k) = SampleFunc(inputData(1,k),inputData(2,k));

@@ -2,7 +2,7 @@ function [rtnR, rtnI] = fftSimple(xR, xI, N)
 rtnR = zeros(1,N);
 rtnI = zeros(1,N);
 
-fprintf('fftSimple: loop(v) = %d\n',floor(N/2));
+%fprintf('fftSimple: loop(v) = %d\n',floor(N/2));
 
 if N == 1
     rtnR(1) = xR(1);

@@ -3,8 +3,8 @@ function [rtnR,rtnI] = fft2D(xR, xI, N)
 rtnR = zeros(N, N);
 rtnI = zeros(N, N);
 
-fprintf('fft1: loop1 = %d, loop2(v) = %d\n',N,N);
-fprintf('fft2: loop1 = %d, loop2(v) = %d\n',N,N);
+%fprintf('fft1: loop1 = %d, loop2(v) = %d\n',N,N);
+%fprintf('fft2: loop1 = %d, loop2(v) = %d\n',N,N);
 
 for i=1:N
     [resR,resI] = fftSimple(xR(i,:),xI(i,:),N);
