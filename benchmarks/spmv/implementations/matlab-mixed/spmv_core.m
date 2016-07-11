@@ -1,7 +1,7 @@
 function [res] = spmv_core(dim,csr_num_rows,csr_Ap,csr_Ax,csr_Aj,vec)
 tot = zeros(1,dim);
 res = zeros(1,dim);
-fprintf('spmv_core: loop1 = %d, loop2(v) = %d\n', csr_num_rows, max(csr_Ap(1+(1:csr_num_rows))-csr_Ap(1:csr_num_rows)));
+%fprintf('spmv_core: loop1 = %d, loop2(v) = %d\n', csr_num_rows, max(csr_Ap(1+(1:csr_num_rows))-csr_Ap(1:csr_num_rows)));
 for row = 1:csr_num_rows
     row_start = csr_Ap(row);
     row_end   = csr_Ap(row + 1);
