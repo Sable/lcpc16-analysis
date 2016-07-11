@@ -13,8 +13,10 @@ parser.add_argument('arguments', metavar='A', nargs='*', type=str,
 args = parser.parse_args()
 
 if sys.platform == 'darwin':
+    exec_path = '/Applications/Octave.app/Contents/Resources/usr/bin/octave-cli'
     lib_dir = 'osx'
 elif sys.platform.startswith('linux'):
+    exec_path = 'octave'
     lib_dir = 'linux'
 else:
     print 'Not supported.'
@@ -44,7 +46,7 @@ matlab_runner_script = """cd('%s'); addpath('%s'); addpath('%s'); try %s(%s); ex
 
 try:
 	subprocess.check_call(
-		['/Applications/Octave.app/Contents/Resources/usr/bin/octave-cli-4.0.2', 
+		[exec_path, 
             '--eval',
 			matlab_runner_script
 		], stdout=sys.stdout, stderr=sys.stderr)

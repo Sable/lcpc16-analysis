@@ -10,7 +10,6 @@ void common_srand(unsigned int seed) {
 }
 
 int common_rand() {
-    // Robert Jenkins' 32 bit integer hash function.
     _common_seed = ((_common_seed + 0x7ed55d16) + (_common_seed << 12))  & 0xffffffff;
     _common_seed = ((_common_seed ^ 0xc761c23c) ^ (_common_seed >> 19))  & 0xffffffff;
     _common_seed = ((_common_seed + 0x165667b1) + (_common_seed << 5))   & 0xffffffff;
@@ -39,7 +38,6 @@ void random_pages(int n, int divisor, double *pages, double *noutlinks){
             }
         }
 
-        // the case with no outlinks is avoided
         if(noutlinks[i] == 0){
             do { k = abs(common_rand()) % n; } while ( k == i);
             pages[i*n + k] = 1;
