@@ -4,7 +4,6 @@ import sys
 import subprocess
 import os.path
 
-
 parser = argparse.ArgumentParser(description='Unified interface for running Matlab programs on the command line.')
 parser.add_argument('file', type=str, 
                    help='the path to the matlab script or function file to execute')
@@ -13,7 +12,15 @@ parser.add_argument('arguments', metavar='A', nargs='*', type=str,
 
 args = parser.parse_args()
 
-env_dir = os.path.abspath(os.path.dirname(os.path.realpath(os.path.realpath(__file__))))
+if sys.platform == 'darwin':
+    lib_dir = 'osx'
+elif sys.platform.startswith('linux'):
+    lib_dir = 'linux'
+else:
+    print 'Not supported.'
+    sys.exit(99)
+
+env_dir = os.path.abspath(os.path.join(os.path.dirname(os.path.realpath(os.path.realpath(__file__))), lib_dir))
 dir_name = os.path.abspath(os.path.dirname(args.file))
 file_name = os.path.basename(args.file)
 function_name = os.path.splitext(file_name)[0]
@@ -37,10 +44,8 @@ matlab_runner_script = """cd('%s'); addpath('%s'); addpath('%s'); try %s(%s); ex
 
 try:
 	subprocess.check_call(
-		['matlab', 
-			'-nodesktop', 
-			'-nodisplay', 
-			'-r', 
+		['/Applications/Octave.app/Contents/Resources/usr/bin/octave-cli-4.0.2', 
+            '--eval',
 			matlab_runner_script
 		], stdout=sys.stdout, stderr=sys.stderr)
 	sys.exit(0)

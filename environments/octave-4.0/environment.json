@@ -1,0 +1,10 @@
+{
+	"type": "environment",
+	"short-name": "octave-4.0",
+	"name": "Octave Virtual Machine",
+	"version": "4.0.2",
+	"supported-languages": ["matlab"],
+	"supported-formats": ["text"],
+	"implementation-language": "x86",
+	"implementation-format": "binary"
+}

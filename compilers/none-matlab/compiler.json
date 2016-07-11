@@ -10,13 +10,6 @@
     ],
     "runner-name":"runner.m",
     "commands": [
-        {
-            "executable-name": "cp",
-            "options": [
-                { "suite-root": "/implementations/matlab/lib/*" },
-                " ./ "
-            ]
-        },
         {   "executable-path": { "file": "./cat-with-nl"},
             "options": [
                 { "config": "/implementation/runner-source-file"},
