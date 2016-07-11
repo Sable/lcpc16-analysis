@@ -59,17 +59,28 @@ csr_matrix rand_csr(const unsigned int N,const unsigned int density, const doubl
 
     for(i=0; i<csr.num_rows; i++)
     {
-        if(i % update_interval == 0) fprintf(log,"\t%d of %d (%5.1f%%) Rows Generated. Continuing...\n",i,csr.num_rows,((double)(i))/csr.num_rows*100);
+        if(i % update_interval == 0) {
+            fprintf(log,"\t%d of %d (%5.1f%%) Rows Generated. Continuing...\n",i,csr.num_rows,((double)(i))/csr.num_rows*100);
+        }
 
         nnz_ith_row_double = r4_nor(seed,kn,fn,wn); //random, normally-distributed value for # of nz elements in ith row, NORMALIZED
         nnz_ith_row_double *= csr.stddev; //scale by standard deviation
         nnz_ith_row_double += csr.nz_per_row; //add average nz/row
+
+        if(i % update_interval == 0) {
+            fprintf(log,"\tRandomly chosen number of non-zero elements in row %d: %5.1f\n",i,nnz_ith_row_double);
+        }
+
         if(nnz_ith_row_double < 0)
             nnz_ith_row = 0;
         else if(nnz_ith_row_double > high_bound)
             nnz_ith_row = high_bound;
         else
             nnz_ith_row = (unsigned int) round(nnz_ith_row_double);
+
+        if(i % update_interval == 0) {
+            fprintf(log,"\tActual number of non-zero elements in row %d: %d\n",i,nnz_ith_row);
+        }
 
         csr.Ap[i+1] = csr.Ap[i] + nnz_ith_row;
         if(csr.Ap[i+1] > csr.num_nonzeros)
