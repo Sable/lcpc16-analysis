@@ -12,7 +12,6 @@ void common_srand(unsigned int seed) {
 }
 
 int common_rand() {
-    // Robert Jenkins' 32 bit integer hash function.
     _common_seed = ((_common_seed + 0x7ed55d16) + (_common_seed << 12))  & 0xffffffff;
     _common_seed = ((_common_seed ^ 0xc761c23c) ^ (_common_seed >> 19))  & 0xffffffff;
     _common_seed = ((_common_seed + 0x165667b1) + (_common_seed << 5))   & 0xffffffff;
@@ -39,9 +38,6 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[]){
     if(nrhs != 2){
         mexErrMsgIdAndTxt("createRandomPageMatrics:nrhs", "Two inputs required");
     }
-    // if(nlhs != 1){
-    //     mexErrMsgIdAndTxt("createRandomPageMatrics:nlhs", "One output required");
-    // }
     int dim0 = (int)mxGetScalar(prhs[0]);
     int dim1 = (int)mxGetScalar(prhs[1]);
     plhs[0] = mxCreateDoubleMatrix(dim0,dim1,mxREAL);
