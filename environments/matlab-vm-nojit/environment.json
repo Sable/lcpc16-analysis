@@ -1,6 +1,6 @@
 {
 	"type": "environment",
-	"short-name": "matlab-vm",
+	"short-name": "matlab-vm-nojit",
 	"name": "MATLAB Virtual Machine",
 	"version": "R2015b (8.6.0.267246)",
 	"supported-languages": ["matlab"],
@@ -14,6 +14,6 @@
         "-r"
     ],
     "run-script-options": {
-        "matlab-jit": true
+        "matlab-jit": false
     }
 }
