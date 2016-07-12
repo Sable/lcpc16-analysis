@@ -1,0 +1,10 @@
+{
+	"type": "environment",
+	"short-name": "matlab-2013",
+	"name": "MATLAB Virtual Machine",
+	"version": "R2013a",
+	"supported-languages": ["matlab"],
+	"supported-formats": ["text"],
+	"implementation-language": "x86",
+	"implementation-format": "binary"
+}
