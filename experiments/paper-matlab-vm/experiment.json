@@ -4,7 +4,7 @@
 	"iteration-number": 5,
 	"input-size":"medium",
 	"configuration": {
-	    "implementations": ["matlab","matlab-plus","matlab-plus-no"],
-        "environment": ["matlab-vm"]
+	    "implementations": ["matlab","matlab-plus","matlab-plus-no", "matlab-mixed"],
+        "environments": ["matlab-vm"]
 	}
 }

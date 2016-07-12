@@ -4,7 +4,7 @@
 	"iteration-number": 1,
 	"input-size":"medium",
 	"configuration": {
-	    "implementations": ["matlab","matlab-plus","matlab-plus-no"],
-        "environment": ["octave"]
+	    "implementations": ["matlab","matlab-plus","matlab-plus-no", "matlab-mixed"],
+        "environments": ["octave-4.0"]
 	}
 }
