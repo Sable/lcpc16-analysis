@@ -28,13 +28,11 @@ Installation instructions
     
     git clone git@github.com:Sable/lcpc16-analysis.git
 
-3. Add a setup.json file in the '.wu' directory at the root of the repository with the following content:
+3. Add a setup.json file in the '.wu' directory at the root of the repository with the following content. Replace "mba-2011" with your own platform short-name. It must be the short-name of a valid platform.json file in the 'platforms' directory:
 
     {
         "platform": "mba-2011"
     }
-
-Replace "mba-2011" with your own platform short-name. It must be the short-name of a valid platform.json file in the 'platforms' directory.
 
 4. Run all the experiments that were done for Matlab for the LCPC paper:
 
