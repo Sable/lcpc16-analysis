@@ -1,0 +1,12 @@
+{
+	"type": "platform",
+	"short-name": "sable-intel",
+	"name": "Linux-3.16.0-29-generic-x86_64-with-Ubuntu-14.04-trusty",
+	"cpu": "Intel(R) Xeon(R) CPU E7- 4850  @ 2.00GHz",
+	"gpu": ["Matrox Electronics Systems Ltd. MGA G200eW WPCM450"],
+	"memory": "62.9018 GB",
+	"os": "Ubuntu 14.04 trusty",
+	"supported-languages": ["x86_64"],
+	"supported-formats": ["binary"],
+	"environments": []
+}
