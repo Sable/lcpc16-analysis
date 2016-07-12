@@ -5,7 +5,7 @@
 	"cpu": "1.8 GHz Intel Core i7",
 	"gpu": "Intel HD Graphics 3000 384 MB",
 	"memory": "4 GB",
-	"os": "OS X 10.9.5",
+	"os": "Mac OS X 10.11.5",
 	"supported-languages": ["x86"],
 	"supported-formats": ["binary"],
 	"environments": [
