@@ -20,6 +20,31 @@ automatically using the Mc2Mc tool (https://github.com/Sable/Mc2Mc). Each
 benchmark has its own README that explains the results we obtained for the
 different versions and the interpretation we made of the different results.
 
+Installation instructions
+=========================
+
+1. Install the Wu-Wei toolchain (https://github.com/Sable/wu-wei-benchmarking-toolkit/wiki/Installation).
+2. Clone this repository:
+    
+    git clone git@github.com:Sable/lcpc16-analysis.git
+
+3. Add a setup.json file in the '.wu' directory at the root of the repository with the following content:
+
+    {
+        "platform": "mba-2011"
+    }
+
+Replace "mba-2011" with your own platform short-name. It must be the short-name of a valid platform.json file in the 'platforms' directory.
+
+4. Run all the experiments that were done for Matlab for the LCPC paper:
+
+    wu run paper-matlab-vm
+    
+5. Report all results:
+
+    wu report
+
+
 Analysis of the performance on the different versions of Matlab
 ===============================
 
