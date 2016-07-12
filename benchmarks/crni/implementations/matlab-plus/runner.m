@@ -5,6 +5,7 @@ function runner(scale)
 %%
 
 % feature accel off;
+% feature accel on;
 
 a=2.5; % a=rand*3;
 b=1.5; % b=1.5;

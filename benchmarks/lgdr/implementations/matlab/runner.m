@@ -3,6 +3,7 @@ function runner(scale)
 %   Detailed explanation goes here
 
 % feature accel off;
+% feature accel on;
 x=[0 0.3 0.9 0.7 0.5];
 n=5;
 

@@ -10,6 +10,7 @@ function runner(twoExp, version, verify, debug)
 % Example: runner(10)
 
 % feature accel off;
+% feature accel on;
 
 expected_input_values = [...
 0.481573149786131970984 0.301748808388446920770 0.340183073820948256305 ...

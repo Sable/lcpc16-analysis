@@ -37,12 +37,26 @@ eR = zeros(1,half);
 eI = zeros(1,half);
 dR = zeros(1,half);
 dI = zeros(1,half);
-mc_t167 = 1;
-for k = (mc_t167 : half);
-eR(k) = xR(minus(times(2,k),1));
-eI(k) = xI(minus(times(2,k),1));
-dR(k) = xR(times(2,k));
-dI(k) = xI(times(2,k));
+k = colon(1,half);
+if length(eI)==length(k)
+eI=xI(minus(times(2,k),1));
+else
+eI(k)=xI(minus(times(2,k),1));
+end
+if length(dI)==length(k)
+dI=xI(times(2,k));
+else
+dI(k)=xI(times(2,k));
+end
+if length(eR)==length(k)
+eR=xR(minus(times(2,k),1));
+else
+eR(k)=xR(minus(times(2,k),1));
+end
+if length(dR)==length(k)
+dR=xR(times(2,k));
+else
+dR(k)=xR(times(2,k));
 end
 [VecER, VecEI] = fftSimple(eR, eI, half);
 [VecDR, VecDI] = fftSimple(dR, dI, half);

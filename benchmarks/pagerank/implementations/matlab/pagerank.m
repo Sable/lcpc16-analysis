@@ -14,7 +14,6 @@ for t = 1:iter
            maps(i,k) = pages(i,k) * outbounRank;
        end
     end
-    disp('a')
     % reduce_page_rank
     dif = 0;
     for j = 1:n
@@ -28,6 +27,5 @@ for t = 1:iter
         pageRanks(j) = newRank;
     end
     maxDiff = dif;
-    disp('b')
 end
 end
