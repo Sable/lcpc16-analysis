@@ -37,13 +37,11 @@ eR = zeros(1,half);
 eI = zeros(1,half);
 dR = zeros(1,half);
 dI = zeros(1,half);
-mc_t167 = 1;
-for k = (mc_t167 : half);
-eR(k) = xR(minus(times(2,k),1));
-eI(k) = xI(minus(times(2,k),1));
+k = colon(1,half);
 dR(k) = xR(times(2,k));
 dI(k) = xI(times(2,k));
-end
+eI(k) = xI(minus(times(2,k),1));
+eR(k) = xR(minus(times(2,k),1));
 [VecER, VecEI] = fftSimple(eR, eI, half);
 [VecDR, VecDI] = fftSimple(dR, dI, half);
 mc_t170 = 1;

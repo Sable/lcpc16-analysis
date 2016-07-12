@@ -2,6 +2,7 @@ function runner(layer_size)
 % Example: runner(2850000);
 
 % feature accel off;
+% feature accel on;
 
 sum_of_hidden_weights = 0;
 expected_sum_of_hidden_weights = 10.855641469359398;
@@ -59,8 +60,6 @@ if layer_size == expected_layer_size
     end
     valueA = floor(sum_of_hidden_weights*10e5);
     valueB = floor(expected_sum_of_hidden_weights*10e5);
-    disp(valueA);
-    disp(valueB);
     if valueA ~= valueB
         error('ERROR: expected a sum of hidden weights of %f for an input size of %d but got %f instead\n',...
             expected_sum_of_hidden_weights, expected_layer_size, sum_of_hidden_weights);

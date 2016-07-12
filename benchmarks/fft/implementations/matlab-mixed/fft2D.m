@@ -25,10 +25,10 @@ rtnI = transpose(rtnI);
 for i=1:N
     [resR,resI] = fftSimple(rtnR(i,:), rtnI(i,:), N);
     % old
-    for k=1:N
-        rtnR(i,k) = resR(k);
-        rtnI(i,k) = resI(k);
-    end
+    %for k=1:N
+    %    rtnR(i,k) = resR(k);
+    %    rtnI(i,k) = resI(k);
+    %end
     % new
     k = colon(1,N);
     rtnI(i, k) = resI(k);

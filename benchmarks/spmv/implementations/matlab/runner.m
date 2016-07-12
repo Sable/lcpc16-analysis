@@ -3,7 +3,8 @@ function runner(dim,density,normal_stdev,iterations)
 % random seed
 
 % feature accel off;
-rand('seed',10000); %octave
+% feature accel on;
+rand('seed',1234579); %octave
 
 % rand_csr
 csr_num_rows     = dim;

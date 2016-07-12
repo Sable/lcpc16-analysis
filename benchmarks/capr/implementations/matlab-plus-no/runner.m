@@ -5,6 +5,7 @@ function runner(scale)
 %%
 
 % feature accel off;
+% feature accel on;
 a=(0.3257463)*2; % the numbers in parentheses are "rand's" made deterministic
 b=8.65*(0.04039);
 c=3.29*(0.55982);

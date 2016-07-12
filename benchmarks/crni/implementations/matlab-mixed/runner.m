@@ -5,12 +5,13 @@ function runner(scale)
 %%
 
 % feature accel off;
+% feature accel on;
 
 a=2.5; % a=rand*3;
 b=1.5; % b=1.5;
 c=5; % c=2;
-m=321;  % n=floor(rand*1389);
-n=5000; %321; % n=floor(rand*529);
+m=2300; %321; % n=floor(rand*1389);
+n=2300; %321; % n=floor(rand*529);
 
 tic();
 for time=1:scale

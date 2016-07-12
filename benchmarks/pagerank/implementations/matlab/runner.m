@@ -1,6 +1,7 @@
 function runner(n, iter, thresh, divisor)
 % Example: runner(3000,10,0.00000001,100000);
     % feature accel off;
+    % feature accel on;
     fprintf(2, 'Running page rank\n');
     % random_pages
     if divisor < 1

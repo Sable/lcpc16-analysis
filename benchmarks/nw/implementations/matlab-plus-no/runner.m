@@ -2,6 +2,7 @@ function runner(size,penalty,seq1_file,seq2_file,nw_file)
 % Example: runner(4096,1);
 
 % feature accel off;
+% feature accel on;
 % s = RandStream('mcg16807','Seed',49734321);
 % RandStream.setGlobalStream(s);
 setRandomSeed();
