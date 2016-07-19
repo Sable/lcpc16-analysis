@@ -17,7 +17,7 @@ wu run blackscholes $cc $ii -n $nn
 wu run capr         $cc $ii -n $nn
 wu run crni         $cc $ii -n $nn
 wu run fft          $cc $ii -n $nn
-wu run lgdr         $cc $ii -n $nn
+#wu run lgdr         $cc $ii -n $nn
 wu run pagerank     $cc $ii -n $nn
 wu run mc           $cc $ii -n $nn
 wu run nw           $cc $ii -n $nn
