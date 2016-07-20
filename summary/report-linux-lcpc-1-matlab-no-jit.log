@@ -1,0 +1,49 @@
+### Invariants (configuration parameters that are the same for all runs) ###
+
+| category | short-name |
+| -------- | ---------- |
+|    compiler | none-matlab |
+|    platform | mbp-hanfeng |
+|    environment | matlab-2013 |
+|    input-size | medium |
+
+### Results ###
+
+|benchmark    | implementation | mean      | std     | repetitions|
+|------------ | -------------- | --------- | ------- | -----------|
+|capr         | matlab         | 14.6302s  | +-0.09% | 3          |
+|capr         | matlab-plus    | 14.6109s  | +-0.32% | 3          |
+|capr         | matlab-plus-no | 14.5060s  | +-0.21% | 3          |
+|capr         | matlab-mixed   | 14.3918s  | +-0.08% | 3          |
+|backprop     | matlab         | 148.3823s | +-0.35% | 3          |
+|backprop     | matlab-plus    | 148.9445s | +-1.14% | 3          |
+|backprop     | matlab-plus-no | 148.9872s | +-0.80% | 3          |
+|backprop     | matlab-mixed   | 2.7640s   | +-0.16% | 3          |
+|blackscholes | matlab         | 28.8366s  | +-0.38% | 3          |
+|blackscholes | matlab-plus    | 0.1149s   | +-1.66% | 3          |
+|blackscholes | matlab-plus-no | 0.1201s   | +-0.29% | 3          |
+|blackscholes | matlab-mixed   | 0.1386s   | +-0.59% | 3          |
+|fft          | matlab         | 12.9473s  | +-5.30% | 3          |
+|fft          | matlab-plus    | 13.5849s  | +-0.29% | 3          |
+|fft          | matlab-plus-no | 13.1040s  | +-6.66% | 3          |
+|fft          | matlab-mixed   | 12.9752s  | +-0.22% | 3          |
+|crni         | matlab         | 248.6866s | +-0.22% | 3          |
+|crni         | matlab-plus    | 119.6993s | +-0.32% | 3          |
+|crni         | matlab-plus-no | 119.5553s | +-0.28% | 3          |
+|crni         | matlab-mixed   | 119.6532s | +-0.49% | 3          |
+|pagerank     | matlab         | 49.7457s  | +-0.52% | 3          |
+|pagerank     | matlab-plus    | 2.0778s   | +-3.46% | 3          |
+|pagerank     | matlab-plus-no | 2.0123s   | +-2.35% | 3          |
+|pagerank     | matlab-mixed   | 1.9490s   | +-4.57% | 3          |
+|mc           | matlab         | 128.2963s | +-0.12% | 3          |
+|mc           | matlab-plus    | 0.5886s   | +-0.04% | 3          |
+|mc           | matlab-plus-no | 0.6891s   | +-0.96% | 3          |
+|mc           | matlab-mixed   | 0.5866s   | +-0.43% | 3          |
+|nw           | matlab         | 57.0941s  | +-0.29% | 3          |
+|nw           | matlab-plus    | 40.2379s  | +-0.06% | 3          |
+|nw           | matlab-plus-no | 40.1983s  | +-0.09% | 3          |
+|nw           | matlab-mixed   | 40.3405s  | +-0.19% | 3          |
+|spmv         | matlab         | 17.7342s  | +-0.40% | 3          |
+|spmv         | matlab-plus    | 32.2066s  | +-0.31% | 3          |
+|spmv         | matlab-plus-no | 31.7741s  | +-1.43% | 3          |
+|spmv         | matlab-mixed   | 33.8418s  | +-0.55% | 3          |

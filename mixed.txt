@@ -1,0 +1,48 @@
+matlab-mixed
+
+backprop
+    [for]
+    bpnn_hidden_error
+    bpnn_output_error
+    bpnn_adjust_weights
+    bpnn_layerforward   
+
+blackscholes
+    [for]
+    runBlkSchls_new
+
+    [if]
+    BlkSchls
+    CNDF
+
+capr
+    [for]
+    gauss
+    capacitor / solved
+
+crni
+    [for]
+    crnich
+    tridiagonal
+
+fft
+    [for]
+    fft2D
+
+    fftSimple (the last loop is human can vectorize but mc2mc cannot)
+
+mc
+    [for]
+    MonteCarlo
+
+    [if]
+    SampleFunc
+
+nw
+    [for]
+    needle
+
+pagerank
+    [for]
+    pagerank
+

@@ -1,0 +1,31 @@
+### Invariants (configuration parameters that are the same for all runs) ###
+
+| category | short-name |
+| -------- | ---------- |
+|    compiler | none-matlab |
+|    platform | mbp-hanfeng |
+|    environment | octave-4.0 |
+|    input-size | medium |
+
+### Results ###
+
+|benchmark    | implementation | mean       | std     | repetitions|
+|------------ | -------------- | ---------- | ------- | -----------|
+|backprop     | matlab         | 1855.0000s | +-0.00% | 1          |
+|backprop     | matlab-mixed   | 0.8387s    | +-0.00% | 1          |
+|blackscholes | matlab         | 97.0990s   | +-0.00% | 1          |
+|blackscholes | matlab-mixed   | 0.2039s    | +-0.00% | 1          |
+|crni         | matlab         | 2452.0000s | +-0.00% | 1          |
+|crni         | matlab-mixed   | 1074.9000s | +-0.00% | 1          |
+|fft          | matlab         | 80.8792s   | +-0.00% | 1          |
+|fft          | matlab-mixed   | 76.2478s   | +-0.00% | 1          |
+|capr         | matlab         | 207.6200s  | +-0.00% | 1          |
+|capr         | matlab-mixed   | 203.6900s  | +-0.00% | 1          |
+|pagerank     | matlab         | 511.2591s  | +-0.00% | 1          |
+|pagerank     | matlab-mixed   | 5.0056s    | +-0.00% | 1          |
+|nw           | matlab         | 981.2875s  | +-0.00% | 1          |
+|nw           | matlab-mixed   | 733.4845s  | +-0.00% | 1          |
+|spmv         | matlab         | 117.6267s  | +-0.00% | 1          |
+|spmv         | matlab-mixed   | 197.3133s  | +-0.00% | 1          |
+|mc           | matlab         | 535.2931s  | +-0.00% | 1          |
+|mc           | matlab-mixed   | 0.3489s    | +-0.00% | 1          |
