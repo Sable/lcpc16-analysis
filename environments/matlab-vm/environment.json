@@ -7,13 +7,13 @@
 	"supported-formats": ["text"],
 	"implementation-language": "x86",
 	"implementation-format": "binary",
-    "executable-path": "matlab",
-    "executable-options": [
-        "-nodesktop", 
-        "-nodisplay", 
-        "-r"
-    ],
-    "run-script-options": {
-        "matlab-jit": true
-    }
+	"executable-path": "matlab",
+	"executable-options": [
+		"-nodesktop",
+		"-nodisplay",
+		"-r"
+	],
+	"run-script-options": {
+		"matlab-jit": true
+	}
 }
