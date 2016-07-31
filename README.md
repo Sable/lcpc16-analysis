@@ -28,32 +28,34 @@ Installation instructions
     
         git clone git@github.com:Sable/lcpc16-analysis.git
 
-3. Run all the experiments that were done for Matlab for the LCPC paper:
+3. Run all the experiments that were done for the LCPC paper:
 
-        wu run paper-matlab-vm
+        wu run paper-experiment
     
 4. Report all results:
 
         wu report
 
 
-Analysis of the performance on the different versions of Matlab
+Analysis of the performance on the different versions of MATLAB
 ===============================
 
 Code versions:
 
     - matlab         : original MATLAB code
+    - matlab-mixed   : mixed MATLAB code from original and vectorized MATLAB code
     - matlab-plus    : vectorized MATLAB code with checks
     - matlab-plus-no : vectorized MATLAB code with no checks
 
 Compilers:
 
+    - GNU Octave 4.0
     - MATLAB R2013a
     - MATLAB R2015b
 
 Benchmarks:
 
-    10 benchmarks (including spmv)
+    10 benchmarks (including lgdr)
 
 Testing
 
