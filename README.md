@@ -49,7 +49,6 @@ Code versions:
 
 Compilers:
 
-    - GNU Octave 4.0
     - MATLAB R2013a
     - MATLAB R2015b
 
@@ -98,7 +97,6 @@ enhancements."
 
 Analysis of the performance on Octave
 ================
-
 
 The current Octave version is 4.0 which doesn't support the JIT.  The
 benchmark 'pagerank' is tested with the medium-size input.  To my
