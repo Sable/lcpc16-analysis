@@ -3,29 +3,29 @@ matlab-mixed
 backprop
     [for]
     bpnn_hidden_error
-    bpnn_output_error
+    bpnn_output_error // one dynamic check
     bpnn_adjust_weights
     bpnn_layerforward   
 
 blackscholes
     [for]
-    runBlkSchls_new
+    runBlkSchls_new // one dynamic check
 
     [if]
     BlkSchls
     CNDF
 
-capr
+capr  // no dynamic check
     [for]
     gauss
     capacitor / solved
 
 crni
     [for]
-    crnich
+    crnich // one dynamic check
     tridiagonal
 
-fft
+fft  // no dynamic check
     [for]
     fft2D
 
@@ -33,16 +33,19 @@ fft
 
 mc
     [for]
-    MonteCarlo
+    MonteCarlo // one dynamic check
 
     [if]
     SampleFunc
 
-nw
+nw  // no dynamic check
     [for]
     needle
 
-pagerank
+pagerank // no dynamic check
     [for]
     pagerank
 
+spmv // no dynamic check
+    [for]
+    spmv_core
