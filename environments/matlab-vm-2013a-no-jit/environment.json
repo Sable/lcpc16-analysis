@@ -1,19 +1,19 @@
 {
 	"type": "environment",
-	"short-name": "matlab-vm-2013a-nojit",
+	"short-name": "matlab-vm-2013a-no-jit",
 	"name": "MATLAB Virtual Machine",
 	"version": "R2013a (8.1.0.604) 64-bit (glnxa64)",
 	"supported-languages": ["matlab"],
 	"supported-formats": ["text"],
 	"implementation-language": "x86_64",
 	"implementation-format": "binary",
-    "executable-path": "/usr/local/pkgs/matlab/R2013a/bin/matlab",
-    "executable-options": [
-        "-nodesktop", 
-        "-nodisplay", 
-        "-r"
-    ],
-    "run-script-options": {
-        "matlab-jit": false
-    }
+	"executable-path": "/usr/local/pkgs/matlab/R2013a/bin/matlab",
+	"executable-options": [
+		"-nodesktop", 
+		"-nodisplay", 
+		"-r"
+	],
+	"run-script-options": {
+		"matlab-jit": false
+	}
 }
