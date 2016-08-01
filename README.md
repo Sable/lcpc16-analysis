@@ -36,6 +36,7 @@ Installation instructions
 
         wu report
 
+Note: if you meet problems, please check the troubleshooting section on the bottom before you ask questions.
 
 Analysis of the performance on the different versions of MATLAB
 ===============================
@@ -155,3 +156,24 @@ In both cases we have to create a new vector b.    The only problem might be if 
 I would expect vectorization not to be a good idea when the original loop was only reading values from an array and writing to a scalar.       The capr example illustrates this.
 
 Whenever we use colon to refer to parts of an array,  it is important to optimize its use as much as possible.    The fft might be an example,  if the code I proposed is faster. 
+
+
+Troubleshooting
+==============
+
+Q1: What if you try "wu list" and the system returns "....wu/setup.json not found, aborting"?
+
+A: 1) Go to the root of the repository;
+   2) "vim .wu/setup.json"
+   3) input with
+
+	{
+		"platform": "lynx"
+	}
+
+   4) save, exit and try "wu list" again
+
+Hint: Please check the directory "platforms/" to find a right platform (folder name).  More details about creating a new configuration can be found at [Wu-Wei's wiki](https://github.com/Sable/wu-wei-benchmarking-toolkit/wiki/Installation).
+
+
+ 
