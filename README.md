@@ -173,7 +173,7 @@ A: 1) Go to the root of the repository;
 
    4) save, exit and try "wu list" again
 
-Hint: Please check the directory "platforms/" to find a right platform (folder name).  More details about creating a new configuration can be found at [Wu-Wei's wiki](https://github.com/Sable/wu-wei-benchmarking-toolkit/wiki/Installation).
+Hint: please check the directory "platforms/" to find a right platform (i.e. a folder name).  More details about creating a new configuration can be found at [Wu-Wei's wiki](https://github.com/Sable/wu-wei-benchmarking-toolkit/wiki/Installation).
 
 
  
