@@ -174,3 +174,11 @@ A:
 3. Replace the "executable-path" field with the path to MATLAB-2013a 
 4. Save and exit
 
+Q3: What if the "wu run paper-experiment" fails in Octave?
+
+A:
+
+1. Go to "environments/octave-4.0"
+2. Compile c code with "mkoctfile --mex createMatrixRandJS.c" and "mkoctfile --mex createRandomPageMatrices.c"
+3. Move the generated libraries "*.mex" into the subdirectory "linux/" or "osx/"
+4. Try the command "wu run paper-experiment" again
