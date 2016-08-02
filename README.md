@@ -163,17 +163,29 @@ Troubleshooting
 
 Q1: What if you try "wu list" and the system returns "....wu/setup.json not found, aborting"?
 
-A: 1) Go to the root of the repository;
-   2) "vim .wu/setup.json"
-   3) input with
+A:
+
+1) Go to the root of the repository;
+
+2) "vim .wu/setup.json"
+
+3) input with
 
 	{
 		"platform": "lynx"
 	}
 
-   4) save, exit and try "wu list" again
+4) save, exit and try "wu list" again
 
 Hint: please check the directory "platforms/" to find a right platform (i.e. a folder name).  More details about creating a new configuration can be found at [Wu-Wei's wiki](https://github.com/Sable/wu-wei-benchmarking-toolkit/wiki/Installation).
 
 
- 
+Q2: What if compilers are not correctly configured?
+
+A:
+
+1) Find where compilers are, for example MATLAB-2013a (e.g. which matlab) 
+2) Type: vim environments/matlab-vm-2013a-jit/environment.json
+3) Replace the "executable-path" field with the path to MATLAB-2013a 
+4) Save and exit
+
