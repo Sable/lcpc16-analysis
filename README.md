@@ -53,30 +53,17 @@ Compilers:
     - MATLAB R2013a
     - MATLAB R2015b
 
-Benchmarks:
+9 benchmarks
 
-    10 benchmarks (including lgdr)
-
-Testing
-
-    - MATLAB R2013a with JIT on  -> figure_Linux-with-JIT.pdf
-    - MATLAB R2013a with JIT off -> figure_Linux-without-JIT.pdf
-    - MATLAB R2015b with JIT on  -> figure_Linux-MATLAB-2015.pdf
-
-Findings
-
-    1. When the JIT is turned off, 9 of 10 benchmarks have speedup.
-       Especially, the blackscholes and Monte Carlo simuations.
-    2. When the JIT is turned on, the speedup of R2013a and R2015b
-       is obvious, but the R2015b has fewer speedup due the improvement
-       of the JIT.  The same reason applies to the MC and pagerank.
-    3. Why is the performance of lgdr improved in R2015b?
-       After I carefully checked the code and I found none loops can
-be vectorized.
-       I think we should remove this benchmark from the list. It seems
-the JIT fails
-       in R2015b.  Anyway, it is irrelevant to our topics.
-
+    - Backprop
+    - Blackscholes
+    - Capr
+    - Crni
+    - FFT
+    - Monte Carlo simulation
+    - NW
+    - PageRank
+    - SPMV
 
 R2015 release note
 
