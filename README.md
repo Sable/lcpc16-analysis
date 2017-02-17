@@ -24,6 +24,7 @@ Installation instructions
 =========================
 
 1. Install the Wu-Wei toolchain (https://github.com/Sable/wu-wei-benchmarking-toolkit/wiki/Installation).
+
 2. Clone this repository:
     
         git clone git@github.com:Sable/lcpc16-analysis.git
@@ -38,8 +39,8 @@ Installation instructions
 
 Note: if you meet problems, please check the troubleshooting section on the bottom before you ask questions.
 
-Analysis of the performance on the different versions of MATLAB
-===============================
+Part I: Analysis of the performance on the different versions of MATLAB
+=======================================================================
 
 Code versions:
 
@@ -83,8 +84,8 @@ and predictable. The new engine offers improved quality and provides a
 platform for future performance optimizations and language
 enhancements."
 
-Analysis of the performance on Octave
-================
+Part II: Analysis of the performance on Octave
+==============================================
 
 The current Octave version is 4.0 which doesn't support the JIT.  The
 benchmark 'pagerank' is tested with the medium-size input.  To my
@@ -106,7 +107,7 @@ worse.
 
 
 Speedup summary
-====
+===============
 
 In MATLAB: (baseline matlab)
 
@@ -123,12 +124,14 @@ In Octave (baseline matlab)
 
 
 Why is vectorization slowing down in some cases?
-=======
+================================================
 
+After looking at the three cases that slow down,  I think we can see some
+possible explanations.  First read the three messages where I added some
+comments.
 
-After looking at the three cases that slow down,  I think we can see some possible explanations.  First read the three messages where I added some comments.
-
-Overall, I would expect vectorization to always be a good idea when we have something like
+Overall, I would expect vectorization to always be a good idea when we have
+something like
 
         for i = 1:n
            b(i) = f(a(i))
@@ -138,47 +141,55 @@ vectorized to
 
         b = f(a)
 
-In both cases we have to create a new vector b.    The only problem might be if a copy of a needs to be made to call the library function f.    I would hope that this is not the case.
+In both cases we have to create a new vector b.    The only problem might be if
+a copy of a needs to be made to call the library function f.    I would hope
+that this is not the case.
 
-I would expect vectorization not to be a good idea when the original loop was only reading values from an array and writing to a scalar.       The capr example illustrates this.
+I would expect vectorization not to be a good idea when the original loop was
+only reading values from an array and writing to a scalar.       The capr
+example illustrates this.
 
-Whenever we use colon to refer to parts of an array,  it is important to optimize its use as much as possible.    The fft might be an example,  if the code I proposed is faster. 
+Whenever we use colon to refer to parts of an array,  it is important to
+optimize its use as much as possible.    The fft might be an example,  if the
+code I proposed is faster. 
 
 
 Troubleshooting
-==============
+===============
 
-Q1: What if you try "wu list" and the system returns "....wu/setup.json not found, aborting"?
+Q1: What if you try "wu list" and the system returns "....wu/setup.json not
+found, aborting"?
 
-A:
+Answer:
 
-1. Go to the root of the repository;
-2. "vim .wu/setup.json"
-3. input with
+    1. Go to the root of the repository;
+    2. "vim .wu/setup.json"
+    3. input with
+        {
+                "platform": "lynx"
+        }
+    4. save, exit and try "wu list" again
 
-	{
-		"platform": "lynx"
-	}
-
-4. save, exit and try "wu list" again
-
-Hint: please check the directory "platforms/" to find a right platform (i.e. a folder name).  More details about creating a new configuration can be found at [Wu-Wei's wiki](https://github.com/Sable/wu-wei-benchmarking-toolkit/wiki/Installation).
+Hint: please check the directory "platforms/" to find a right platform (i.e. a
+folder name).  More details about creating a new configuration can be found at
+[Wu-Wei's
+wiki](https://github.com/Sable/wu-wei-benchmarking-toolkit/wiki/Installation).
 
 
 Q2: What if compilers are not correctly configured?
 
-A:
+Answer:
 
-1. Find where compilers are, for example MATLAB-2013a (e.g. which matlab) 
-2. Type: vim environments/matlab-vm-2013a-jit/environment.json
-3. Replace the "executable-path" field with the path to MATLAB-2013a 
-4. Save and exit
+    1. Find where compilers are, for example MATLAB-2013a (e.g. which matlab) 
+    2. Type: vim environments/matlab-vm-2013a-jit/environment.json
+    3. Replace the "executable-path" field with the path to MATLAB-2013a 
+    4. Save and exit
 
 Q3: What if the "wu run paper-experiment" fails in Octave?
 
-A:
+Answer:
 
-1. Go to "environments/octave-4.0"
-2. Compile c code with "mkoctfile --mex createMatrixRandJS.c" and "mkoctfile --mex createRandomPageMatrices.c"
-3. Move the generated libraries "*.mex" into the subdirectory "linux/" or "osx/"
-4. Try the command "wu run paper-experiment" again
+    1. Go to "environments/octave-4.0"
+    2. Compile c code with `mkoctfile --mex createMatrixRandJS.c` and `mkoctfile --mex createRandomPageMatrices.c`
+    3. Move the generated libraries "\*.mex" into the subdirectory "linux/" or "osx/"
+    4. Try the command "wu run paper-experiment" again
