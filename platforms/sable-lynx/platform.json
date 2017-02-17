@@ -1,0 +1,19 @@
+{
+    "short-name": "sable-lynx",
+    "type": "platform",
+    "name": "Linux-4.4.0-59-generic-x86_64-with-Ubuntu-16.04-xenial",
+    "cpu": "Intel(R) Core(TM) i7-3820 CPU @ 3.60GHz",
+    "gpu": [
+        "GeForce GTX 560 Ti"
+    ],
+    "memory": "7.77426 GB",
+    "os": "Ubuntu 16.04 xenial",
+    "supported-languages": [
+        "x86_64"
+    ],
+    "supported-formats": [
+        "binary"
+    ],
+    "environments": [],
+    "location": "/home/sable/hanfeng.c/experiment/lcpc16/lcpc16-analysis/platforms/sable-lynx"
+}
